@@ -5,7 +5,7 @@ const initialState = {
     cartTotal : {}
 }
 
-export default (state=initialState, action) => {
+export default function(state=initialState, action) {
     switch (action.type) {
         case GET_CARTS:
             return{
