@@ -10,7 +10,7 @@ function ProductDetails(props) {
 
     const {is_authenticated} = useSelector(state => state.auth)
 
-    const [item, setItem] = useState(props.location.state.item)
+    const [item] = useState(props.location.state.item)
 
     useEffect(()=>{
         window.scroll(0, 0)
@@ -66,8 +66,8 @@ function ProductDetails(props) {
 
             <div className="product_description">
                 <h2>Product Description</h2>
-                <p>Perlegear Full Motion TV Wall Mount Bracket Dual Articulating Arms Swivels Tilts Rotation for Most 37-75 Inch LED, LCD, OLED Flat&Curved TVs, Holds up to 132lbs, Max VESA 600x400mm</p>
-                <p>Perlegear Full Motion TV Wall Mount Bracket Dual Articulating Arms Swivels Tilts Rotation for Most 37-75 Inch LED, LCD, OLED Flat&Curved TVs, Holds up to 132lbs, Max VESA 600x400mm</p>
+                <p>Perlegear Full Motion TV Wall Mount Bracket Dual Articulating Arms Swivels Tilts Rotation for Most 37-75 Inch LED, LCD, OLED FlatCurved TVs, Holds up to 132lbs, Max VESA 600x400mm</p>
+                <p>Perlegear Full Motion TV Wall Mount Bracket Dual Articulating Arms Swivels Tilts Rotation for Most 37-75 Inch LED, LCD, OLED FlatCurved TVs, Holds up to 132lbs, Max VESA 600x400mm</p>
                 
             </div>
 

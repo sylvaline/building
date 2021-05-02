@@ -1,4 +1,4 @@
-import {LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT_SUCCESS, SIGNUP_FAIL, SIGNUP_SUCCESS, GETTING_USER, GET_USER, GET_USER_ERROR} from './types'
+import {LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT_SUCCESS, SIGNUP_FAIL, SIGNUP_SUCCESS, GETTING_USER, GET_USER} from './types'
 
 import axios from '../../helper/axios'
 import Config from '../../helper/Config'
@@ -20,9 +20,7 @@ const get_user = () => (dispatch, getState) =>{
         })
     })
     .catch(err => {
-        // dispatch({
-        //     type : GET_USER_ERROR
-        // });
+       
         console.log(err)
     })
    

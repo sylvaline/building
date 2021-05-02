@@ -1,4 +1,4 @@
-import {FETCH_PRODUCT, CLEAR_CART, REMOVE_QUANTITY, ADD_PRODUCT, ADD_QUANTITY, ADD_TO_CART} from './types'
+import {FETCH_PRODUCT} from './types'
 import axios from '../../helper/axios'
 
 
@@ -15,6 +15,3 @@ export const get_products = () => dispatch =>{
 
 }
 
-export const add_to_cart = () => dispatch => {
-    
-}

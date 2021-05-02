@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect} from 'react'
 import {Switch, Route} from 'react-router-dom'
 import Cart from './component/Cart'
 import Home from './component/Home'

@@ -13,7 +13,7 @@ import { useDispatch, useSelector } from "react-redux";
 function Cart() {
   const dispatch = useDispatch();
   const { carts, cartTotal } = useSelector((state) => state.cart);
-  const { is_authenticated, token } = useSelector((state) => state.auth);
+  const { is_authenticated} = useSelector((state) => state.auth);
 
   useEffect(() => {
     dispatch(get_cart_items());
