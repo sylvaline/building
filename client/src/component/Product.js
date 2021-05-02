@@ -6,15 +6,17 @@ import { IoMdHeartEmpty } from "react-icons/io";
 import { Link } from "react-router-dom";
 
 function Product() {
+  
   const dispatch = useDispatch();
+
   const { product } = useSelector((state) => state.product);
   const {is_authenticated} = useSelector(state => state.auth)
 
   useEffect(() => {
     dispatch(get_products());
   }, []);
-  let id = "";
-  console.log(id);
+
+
   return (
     <div className="product">
       {product &&

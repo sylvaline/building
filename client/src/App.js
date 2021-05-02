@@ -19,7 +19,7 @@ function App() {
 
   useEffect(()=>{
     dispatch(get_user())
-  },[])
+  }, [])
 
  
   if(is_authenticated){
