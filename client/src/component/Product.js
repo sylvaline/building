@@ -6,17 +6,21 @@ import { IoMdHeartEmpty } from "react-icons/io";
 import { Link } from "react-router-dom";
 
 function Product() {
-  
+
   const dispatch = useDispatch();
 
-  const { product } = useSelector((state) => state.product);
+  const { product, is_product_loading } = useSelector((state) => state.product);
   const {is_authenticated} = useSelector(state => state.auth)
 
   useEffect(() => {
     dispatch(get_products());
   }, []);
 
-
+if(is_product_loading ){
+  return <div className="loader">
+    <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+  </div>
+}
   return (
     <div className="product">
       {product &&
