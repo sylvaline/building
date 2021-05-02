@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import {get_products} from '../store/actions/productActions'
 import {add_to_cart} from '../store/actions/cartActions'
 import {IoMdHeartEmpty} from 'react-icons/io'
 import { Link } from 'react-router-dom'

@@ -17,16 +17,11 @@ function App() {
   const dispatch = useDispatch()
   const {is_authenticated} = useSelector(state => state.auth)
 
-  const[render_cart, setRender_cart] = useState(false)
-
   useEffect(()=>{
     dispatch(get_user())
   },[])
 
-  // useEffect(()=>{
-    
-  // },[is_authenticated])
-
+ 
   if(is_authenticated){
     dispatch(get_cart_items())
   }

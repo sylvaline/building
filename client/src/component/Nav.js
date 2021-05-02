@@ -1,12 +1,12 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
-import {useSelector, useDispatch} from 'react-redux'
+import {useSelector} from 'react-redux'
 import Search from './Search'
 import { IoIosCart, IoIosMenu } from 'react-icons/io';
 
 
 function Nav() {
-    const dispatch = useDispatch()
+  
     const {user, is_authenticated} = useSelector(state => state.auth)
     const {carts} = useSelector(state => state.cart)
     return (

@@ -14,7 +14,6 @@ function Cart() {
   const dispatch = useDispatch();
   const { carts, cartTotal } = useSelector((state) => state.cart);
   const { is_authenticated, token } = useSelector((state) => state.auth);
-  // const [reRender, setRe]
 
   useEffect(() => {
     dispatch(get_cart_items());
