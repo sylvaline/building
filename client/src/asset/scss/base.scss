@@ -1,0 +1,66 @@
+@import'variables';
+@import'product';
+@import'home';
+@import'nav';
+@import'cart';
+@import'auth';
+@import'search';
+@import'productDetails';
+
+
+:root{
+    box-sizing: border-box;
+}
+
+*,::after,::before{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family:  Helvetica, sans-serif;
+    background-color: $main_bg;
+
+    input{
+        outline: none;
+        border: none;
+        font-size: 1.1em;
+        padding-left: 1em;
+    }
+
+    button{
+        outline: none;
+        padding: .5em 1em;
+        background-color: $btn;
+        font-size: 1em;
+        color: $btn_text_color;
+        transition: all .5s linear;
+        border: .2em solid $btn;
+
+        &:hover{
+           
+           background-color: $btn_hover;
+           color: $btn_hover_text_color;
+        }
+    }
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.footer{
+    background-color: $nav;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 100%;
+}
+
+
+
+

@@ -1,0 +1,72 @@
+.auth{
+    width: 40%;
+    margin: 6em auto ;
+    background-color: salmon;
+    padding: 2em;
+
+    .auth_title{
+        text-align: right;
+        margin-bottom: 2em;
+        color: white;
+
+        p{
+            font-size: 2em;
+        }
+
+        .is_free{
+            
+            font-size: 1em;
+            margin-top: .5em;
+        }
+    }
+
+    form{
+        .form_div{
+            width: 100%;
+            background-color: white;
+            height: 3em;
+            border: .1em solid rgba(0, 0, 0, 0.308);
+            margin-bottom: 1em;
+            border-radius: .3em;
+
+            input{
+                width: 100%;
+                background-color: transparent;
+                outline: none;
+                border: none;
+                font-size: 1em;
+                padding: 1em .5em;
+
+                &::placeholder{
+                    font-size: 1em; 
+                }
+            }
+        }
+
+        .more_info{
+            margin: 1em 0;
+            color: white;
+
+            p{
+                font-size: .8em;
+                a{
+                    color: turquoise !important;
+                }
+            }
+            }
+
+        button{
+            width: 50%;
+            padding: .5em 1em;
+            
+
+        }
+    }
+        
+}
+
+@media screen and (max-width:50em) {
+    .auth{
+        width: 90%;
+    }
+}
