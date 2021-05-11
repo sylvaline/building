@@ -24,16 +24,16 @@ function Nav() {
                 <ul>
                     
                     {
-                        is_authenticated ? <li ><NavLink to="/signout">Hello {' ' + user && user.name ? user.name : 'Guest'}</NavLink></li> : <li><NavLink to="/login">Login</NavLink></li>
+                        is_authenticated ? <li ><NavLink to="/signout">Hello {' ' + user && user?.name ? user?.name : 'Guest'}</NavLink></li> : <li><NavLink to="/login">Login</NavLink></li>
                     }
-                   <li><NavLink to="/cart"><IoIosCart />{(carts  && carts.cartItems) && is_authenticated ? `(${carts.cartItems.length })`: ''}</NavLink></li>
+                   <li><NavLink to="/cart"><i className="fas fa-shopping-cart"></i>{(carts  && carts.cartItems) && is_authenticated ? `(${carts.cartItems.length })`: ''}</NavLink></li>
                 </ul>
             </div>
             <div className="nav_inner_mobile">
                 <div className="upper_nav">
 
                 <div>
-                    <IoIosMenu />
+                <i className="fas fa-bars"></i>
                 </div>
                 <div className="logo">
                     <h1><NavLink to="/">Prince LTD</NavLink></h1>
@@ -41,9 +41,9 @@ function Nav() {
                 <ul>
                     
                     {
-                        is_authenticated ? <li ><NavLink to="/signout"> {' ' + user && user.name ? user.name : 'Guest'}</NavLink></li> : <li><NavLink to="/login">Login</NavLink></li>
+                        is_authenticated ? <li ><NavLink to="/signout"> {' ' + user && user?.name ? user?.name : 'Guest'}</NavLink></li> : <li><NavLink to="/login">Login</NavLink></li>
                     }
-                    <li><NavLink to="/cart"><IoIosCart />{(carts  && carts.cartItems) && is_authenticated ? `(${carts.cartItems.length })`: ''}</NavLink></li>
+                    <li><NavLink to="/cart"><i className="fas fa-shopping-cart"></i>{(carts  && carts.cartItems) && is_authenticated ? `(${carts?.cartItems.length })`: ''}</NavLink></li>
                 </ul>
                 </div>
                 

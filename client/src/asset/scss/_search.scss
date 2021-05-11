@@ -4,7 +4,6 @@
     form{
         .search_form{
             width: 100%;
-            background-color: brown;
             height: 6vh;
             display: flex;
             
@@ -34,9 +33,7 @@
             margin: 1em auto;
             background-color: $nav;
             
-            .search_form{
-                border-radius: $border_radius;
-            }
+           
         }
     }
 }

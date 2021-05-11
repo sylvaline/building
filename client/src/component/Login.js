@@ -1,9 +1,28 @@
 import React, { useState } from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import {signin} from '../store/actions/authActions'
+import {signin, responseGoogle} from '../store/actions/authActions'
 import {Link, Redirect} from 'react-router-dom'
+import { GoogleLogin } from 'react-google-login';
+
 
 function Login() {
+
+    // const responseGoogle = response => {
+    //     console.log(response)
+    //     const config = {
+    //         url : '/auth/signup-with-google',
+    //         method : 'POST',
+    //         headers : {
+    //             "Content-Type":"application/json"
+    //         },
+    //         data :  JSON.stringify(response) 
+    //     }
+    
+    //     axios(config)
+    //     .then(res =>{
+    //         console.log(res)
+    //     })
+    // }
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -22,6 +41,8 @@ function Login() {
         dispatch(signin(user))  
 
     }
+
+   
 
     if(is_authenticated){
         return <Redirect to={'/'}/>
@@ -44,6 +65,17 @@ function Login() {
                 </div>
                 <button>Sign In</button>
             </form>
+
+            <h1><span>---- Or ----</span></h1>
+            <p>
+            <GoogleLogin
+                clientId="743257448199-6rnf0kv5bjuft36eapc6or8p0dar8sju.apps.googleusercontent.com"
+                buttonText="Login with Google"
+                onSuccess={()=>dispatch(responseGoogle())}
+                onFailure={()=>dispatch(responseGoogle())}
+                cookiePolicy={'single_host_origin'}
+            />,
+            </p>
         </div>
     )
 }

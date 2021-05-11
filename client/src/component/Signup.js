@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import {signup} from '../store/actions/authActions'
+import {signup, responseGoogle} from '../store/actions/authActions'
 import {Link, Redirect} from 'react-router-dom'
+import { GoogleLogin } from 'react-google-login';
+
+
 
 function Signup() {
 
@@ -49,6 +52,16 @@ function Signup() {
                 </div>
                 <button>Sign Up</button>
             </form>
+            <h1><span>---- Or ----</span></h1>
+            <p>
+            <GoogleLogin
+                clientId="743257448199-6rnf0kv5bjuft36eapc6or8p0dar8sju.apps.googleusercontent.com"
+                buttonText="Sign with Google"
+                onSuccess={()=>dispatch(responseGoogle())}
+                onFailure={()=>dispatch(responseGoogle())}
+                cookiePolicy={'single_host_origin'}
+            />,
+            </p>
         </div>
     )
 }

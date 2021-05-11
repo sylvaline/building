@@ -1,4 +1,4 @@
-import {LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT_SUCCESS, SIGNUP_FAIL, SIGNUP_SUCCESS, GETTING_USER, GET_USER} from './types'
+import {LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT_SUCCESS, SIGNUP_FAIL, SIGNUP_SUCCESS, GETTING_USER, GET_USER, AUTH_SUCCESS} from './types'
 
 import axios from '../../helper/axios'
 import Config from '../../helper/Config'
@@ -25,7 +25,36 @@ const get_user = () => (dispatch, getState) =>{
     })
    
 }
+export const responseGoogle = (response) => dispatch => {
 
+    console.log(response)
+
+    dispatch({
+        type : GETTING_USER
+    })
+
+    const config = {
+        url : '/auth/signup-with-google',
+        method : 'POST',
+        headers : {
+            "Content-Type":"application/json"
+        },
+        data :  JSON.stringify(response) 
+    }
+
+    axios(config)
+    .then(res => {
+        dispatch({
+            type : AUTH_SUCCESS,
+            payload : res.data
+        })
+    })
+    .catch(err => {
+       
+        console.log(err)
+    })
+
+}
 export const signup = (value) => dispatch => {
 
     dispatch({
