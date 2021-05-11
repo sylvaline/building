@@ -5,17 +5,20 @@ import rootReducer from './reducers'
 
 const initialState = {}
 
-const devTools = () => {
-    let result = null
-    if(process.env.NODE_ENV === "development"){
-        result = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-        return result
-    }
-     return null
-}
+// const devTools = () => {
+//     let result = null
+//     if(process.env.NODE_ENV === "development"){
+//         result = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+//         return result
+//     }
+//      return null
+// }
 
-const reduxDevTools = devTools()
+// const reduxDevTools = devTools()
 
-const store = createStore(rootReducer, initialState, compose(applyMiddleware(thunk), reduxDevTools))
+// const store = createStore(rootReducer, initialState, compose(applyMiddleware(thunk), reduxDevTools))
+
+
+const store = createStore(rootReducer, initialState, compose(applyMiddleware(thunk)))
 
 export default store
