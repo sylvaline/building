@@ -1,28 +1,15 @@
 import React, { useState } from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import {signin, responseGoogle} from '../store/actions/authActions'
+import {signin} from '../store/actions/authActions'
 import {Link, Redirect} from 'react-router-dom'
 import { GoogleLogin } from 'react-google-login';
+import axios from '../helper/axios'
+import {GETTING_USER, AUTH_SUCCESS} from '../store/actions/types'
 
 
 function Login() {
 
-    // const responseGoogle = response => {
-    //     console.log(response)
-    //     const config = {
-    //         url : '/auth/signup-with-google',
-    //         method : 'POST',
-    //         headers : {
-    //             "Content-Type":"application/json"
-    //         },
-    //         data :  JSON.stringify(response) 
-    //     }
-    
-    //     axios(config)
-    //     .then(res =>{
-    //         console.log(res)
-    //     })
-    // }
+   
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -42,7 +29,36 @@ function Login() {
 
     }
 
-   
+    const responseGoogle = (response) =>  {
+
+        console.log(response)
+    
+        dispatch({
+            type : GETTING_USER
+        })
+    
+        const config = {
+            url : '/auth/signup-with-google',
+            method : 'POST',
+            headers : {
+                "Content-Type":"application/json"
+            },
+            data :  JSON.stringify(response) 
+        }
+    
+        axios(config)
+        .then(res => {
+            dispatch({
+                type : AUTH_SUCCESS,
+                payload : res.data
+            })
+        })
+        .catch(err => {
+           
+            console.log(err)
+        })
+
+    }
 
     if(is_authenticated){
         return <Redirect to={'/'}/>
@@ -71,10 +87,10 @@ function Login() {
             <GoogleLogin
                 clientId="743257448199-6rnf0kv5bjuft36eapc6or8p0dar8sju.apps.googleusercontent.com"
                 buttonText="Login with Google"
-                onSuccess={()=>dispatch(responseGoogle())}
-                onFailure={()=>dispatch(responseGoogle())}
+                onSuccess={responseGoogle}
+                onFailure={responseGoogle}
                 cookiePolicy={'single_host_origin'}
-            />,
+            />
             </p>
         </div>
     )
