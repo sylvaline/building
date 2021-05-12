@@ -1,7 +1,20 @@
-.search{
+.no_search_found{
+    width: 50%;
+    min-height: 80vh;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
     
+}
 
-    form{
+.searched{
+    margin-top: 2em;
+}
+
+.search{
         .search_form{
             width: 100%;
             height: 6vh;
@@ -14,24 +27,34 @@
 
             }
 
-            p{
-                height: 100%;
-                width: 10%; 
-                background-color: orange; 
-                display: flex;
-                justify-content: center;
-                align-items: center;
+            button{
+                
+                &:hover{
+           
+                    background-color: $btn;
+                    color: $btn_hover_text_color;
+                 }
             }
         }
-    }
 }
 
+
 @media screen and (max-width:50em){
+
+    .searched{
+        margin-top: 5em;
+    }
+
+    .no_search_found{
+        min-height: 70vh;
+    }
     .search{
+        
         form{
             width: 90%;
             margin: 1em auto;
             background-color: $nav;
+            
             
            
         }

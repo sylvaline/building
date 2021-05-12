@@ -9,7 +9,6 @@ import {GETTING_USER, AUTH_SUCCESS} from '../store/actions/types'
 
 function Login() {
 
-   
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')

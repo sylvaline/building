@@ -5,26 +5,33 @@ import { add_to_cart } from "../store/actions/cartActions";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { Link } from "react-router-dom";
 
-function Product() {
+function Product(props) {
 
   const dispatch = useDispatch();
 
-  const { products, is_product_loading } = useSelector((state) => state.product);
+  const { products, searched_input} = useSelector((state) => state.product);
   const {is_authenticated} = useSelector(state => state.auth)
 
-  useEffect(() => {
-    dispatch(get_products());
-  }, []);
+  console.log(searched_input)
 
-if(is_product_loading ){
-  return <div className="loader">
-    <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
-  </div>
-}
+  const searched = products?.filter(product => product.name.toLowerCase().includes(searched_input))
+
+  if(!searched?.length > 0){
+      return(
+          <div className="no_search_found">
+              <div className="no_search">
+              <h4 >
+                  No value found for : #{searched_input}
+              </h4>
+              </div>
+          </div>
+      )
+  }
+
   return (
-    <div className="product">
-      {products &&
-        products.map((item) => {
+    <div className="product searched">
+      {searched &&
+        searched.map((item) => {
           return (
             <div key={item._id} className="product_card">
               <div className="fav">

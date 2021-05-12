@@ -13,7 +13,7 @@ const config = (getState, url, method, value=null) => {
     }
 
     if(token){
-        configuration.headers['x-auth-token'] = token
+        configuration.headers['Authorization'] = `Bearer ${token}`
     }
 
     return configuration

@@ -6,6 +6,7 @@
 @import'auth';
 @import'search';
 @import'loader';
+@import'mobile_menu';
 @import'productDetails';
 
 
@@ -22,6 +23,7 @@
 body{
     font-family:  Helvetica, sans-serif;
     background-color: $main_bg;
+    overflow-x: hidden;
 
     input{
         outline: none;
@@ -38,12 +40,50 @@ body{
         color: $btn_text_color;
         transition: all .5s linear;
         border: .2em solid $btn;
+        border-radius: .3em;
 
         &:hover{
            
            background-color: $btn_hover;
            color: $btn_hover_text_color;
         }
+    }
+}
+
+.move_up{
+    margin-bottom: 3em;
+    background-color: cadetblue;
+    width: 100%;
+    min-height: 40em;
+}
+
+.scroll_to_top{
+   
+
+    .scroll_to_top_inner{
+        position: fixed;
+        width: 3em;
+        height: 3em;
+        position: fixed;
+        bottom: 1em;
+        right: 2em;
+        border-radius: 100%;
+        background-color: brown;
+
+        h3{
+           text-align: center; 
+           margin-top: .8em;
+           color: white;
+           animation: move_scroll 0.5s alternate infinite;
+        }
+    }
+}
+
+@keyframes move_scroll {
+    from{
+        transform: translateY(2px);
+    } to{
+        transform: translateY(-1px);
     }
 }
 

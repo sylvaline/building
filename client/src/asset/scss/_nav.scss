@@ -52,10 +52,14 @@
             display: flex;
             margin-left: 1em;
             margin-top: .5em;
+
+           
             
 
             li{
-
+                i{
+                    animation: moving_cart 0.5s alternate infinite;
+                }
 
                 a{
                     padding: .5em 1.5em;
@@ -80,6 +84,14 @@
     }
 }
 
+@keyframes moving_cart{
+    from{
+        transform: translateY(2px);
+    } to{
+        transform: translateY(-1px);
+    }
+}
+
 @media screen and (max-width:50em) {
     .nav{
         background-color: $nav;
@@ -94,15 +106,22 @@
             .upper_nav{
                 height: 10vh;
                 display: flex;
-                width: 90%;
+                width: 95%;
                 margin: auto;
                 justify-content: space-between;
                 align-items: center;
+
+                .fa-bars{
+                    font-size: 1.8em;
+                }
 
                 ul{
                     display: flex;
                     list-style: 
                     none;
+                    i{
+                        animation: moving_cart 0.5s alternate infinite;
+                    }
 
                     li{
                         margin-right: .5em;
@@ -110,9 +129,9 @@
                 }
 
                 .logo{
-                    margin-left: -5em;
+                    margin-left: -3em;
                     h1{
-                        font-size: 1.5em;
+                        font-size: 2em;
                     }
                 }
             }

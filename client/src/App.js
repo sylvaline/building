@@ -11,6 +11,12 @@ import Login from './component/Login'
 import Signup from './component/Signup'
 import Signout from './component/Signout'
 import Footer from './component/Footer'
+import SearchedProduct from './component/SearchedProduct'
+import MobileMenu from './component/MobileMenu'
+import About from './component/About'
+import Reviews from './component/Reviews'
+import Contact from './component/Contact'
+import Blog from './component/Blog'
 
 function App() {
 
@@ -27,15 +33,20 @@ function App() {
   }
   
   return (
-    <div className="">
+    <div className="container">
       <Nav />
       <Switch>
         <Route path="/" exact component={Home} />
+        <Route path="/about" component={About} />
+        <Route path="/contact" component={Contact} />
+        <Route path="/reviews" component={Reviews} />
+        <Route path="/blog" component={Blog} />
         <Route path="/cart"  component={Cart} />
         <Route path="/product-details/:id" component={ProductDetails} />
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
-        <Route path="/signout" component={Signout} />
+        <Route path="/mobile" component={MobileMenu} />
+        <Route path="/searched-products" component={SearchedProduct} />
       </Switch>
       <Footer/>
     </div>
